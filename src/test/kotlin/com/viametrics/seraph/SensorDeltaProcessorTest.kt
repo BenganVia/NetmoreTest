@@ -1,6 +1,8 @@
-package org.example
+package com.viametrics.seraph
 
-import org.junit.jupiter.api.Assertions.*
+import com.viametrics.seraph.model.RawReading
+import com.viametrics.seraph.processing.SensorDeltaProcessor
+import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import java.time.Instant
 
@@ -17,6 +19,6 @@ class SensorDeltaProcessorTest {
 
         val result = processor.process(RawReading("A", t2, 150))
 
-        assertEquals(50, result!!.delta)
+        Assertions.assertEquals(50, result!!.delta)
     }
 }
